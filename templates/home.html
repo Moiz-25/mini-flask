@@ -1,58 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>
-      Quantum DS
-    </title>
+    <title>Quantum DS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
-      h1{
-        font-size: 40px;
-        font-family: Roboto;
-        font-weight: normal;
-        color: rgb(100, 100, 100);
-        text-align: center
-      }
-      h2 {
-        font-family: Roboto;
-        font-size: 32px;
-        color: rgb(100, 100, 100);
-        text-align: center;
-        font-weight: normal;
-      }
-
-      .bodytext {
-        font-family: Roboto;
-        color: rgb(80)80, 80);
-        
-      }
-      #banner{
+      #banner {
+        object-fit: cover;
         width: 100%;
-        height: 340px;
-        cover-fit: cover;
-      }
-
-      #container {
-        max-width: 720px;
-        margin: 0 auto 0 auto;
+        height: 370px;
       }
     </style>
   </head>
   <body>
-    <div id='container'>
-    <h1>Quantum DS</h1>
-    <img id='banner' src="static/banner.jpg" alt='Do something great banner' height=320px>
+    <div class='container'>
+    <h1 class="text-center mt-2 mb-4"">{{company_name}} DS</h1>
+    <img class="img-fluid" id='banner' src="static/banner.jpg" alt='Do something great banner' height=320px>
     <h2>About Quantum DS</h2>
-    <p class="bodytext">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias ea explicabo quis porro reiciendis excepturi eos deleniti repellendus, unde ullam possimus, dolore dicta, debitis inventore autem obcaecati voluptatem corporis modi?
+    <p class='lead'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias ea explicabo quis porro reiciendis excepturi eos deleniti repellendus, unde ullam possimus, dolore dicta, debitis inventore autem obcaecati voluptatem corporis modi?
     Modi soluta amet aperiam, quis quos temporibus numquam sit veritatis a adipisci ex repellendus unde expedita quae dolorum nisi! Repellendus ipsa, placeat autem facere quisquam ipsum sed hic sunt! Libero?
     Corrupti et officiis quaerat quasi veniam ullam illo atque tempore omnis facilis mollitia rerum iure modi placeat quam accusamus qui, fugiat, praesentium porro veritatis deserunt voluptates! Enim error similique iste.
     Id esse fugit iusto aliquam optio laborum dolores exercitationem in, est atque similique, a delectus quidem repellat dicta odit voluptate, tenetur omnis? Incidunt iusto dolor nisi deleniti, quod neque alias!
     Saepe quo esse facere quam consequuntur animi nam rem tenetur neque suscipit rerum placeat velit, aut, tempore temporibus voluptas reprehenderit enim laboriosam obcaecati excepturi eos officiis dolorum earum. Incidunt, quasi.</p>
-    <h2>Open Positions</h2>
-    <p>TODO: Show the Jobs here</p>
+    <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+    <div>
+      {% for job in jobs %}
+        <h4 style="color:rgb(120, 120, 120); margin-bottom:4px"><div>{{job['title']}}</div></h4>
+      <div><b>Location:</b>{{job['location']}}</div>
+      {% endfor %}
     </div>
-    <div style="text-align: center;">
-      <button>Contact Us</button>
-      <p>Copyright 2024, Quantum DS</p>
+    </div>
+    <div class='text-center'>
+      <button class="btn btn-primary">Contact Us</button>
+      <p class="text-center mt-4">Copyright 2024, Quantum DS</p>
     </div>
   </body>
 </html>
